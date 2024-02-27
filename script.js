@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPlayer = 'X';
     let gameBoard = ['', '', '', '', '', '', '', '', ''];
     let gameWon = false;
-    let isComputerMode = false;
+    let isComputerMode = true; // Set computer mode to true by default
     let winningCombination = [];
 
     function checkWinner() {
@@ -175,6 +175,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Replace the text content of the mode button with the Font Awesome icon
     computerModeButton.innerHTML = '<i class="fas fa-desktop"></i>';
 
+    // Toggle computer mode to set the initial state
+    toggleComputerMode();
+
+    // Event listeners
     cells.forEach((cell, index) => {
         cell.addEventListener('click', () => handleCellClick(index));
     });
